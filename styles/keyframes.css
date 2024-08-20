@@ -1,0 +1,43 @@
+@keyframes show-home {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes show-p {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes reveal-ul {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes show-social {
+  from {
+    opacity: 0;
+    filter: blur(100%);
+  }
+  to {
+    filter: blur(0%);
+    opacity: 1;
+  }
+}

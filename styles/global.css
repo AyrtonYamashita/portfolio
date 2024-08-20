@@ -1,0 +1,143 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #11171a;
+  color: aliceblue;
+}
+
+html {
+  font-family: "Ubuntu", sans-serif;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2rem;
+  margin-left: 13rem;
+
+  aside {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      opacity: 0;
+      font-size: 3.5rem;
+      animation: show-home 2s ease forwards;
+    }
+
+    p {
+      opacity: 0;
+      font-size: 1.25rem;
+      margin-top: 0.875rem;
+      animation: show-p 1s 1s ease forwards;
+
+      span {
+        color: #16b4f8;
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+
+    a {
+      display: inline-block;
+      position: relative;
+      transition: 0.2s 0.4s ease;
+    }
+
+    a:hover {
+      color: #16b4f8;
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0) translateY(5px);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #16b4f8;
+      transform-origin: bottom right;
+      transition: transform 0.4s ease-out;
+    }
+
+    a:hover::after {
+      transform: scaleX(1) translateY(5px);
+      transform-origin: bottom left;
+    }
+
+    li {
+      opacity: 0;
+    }
+
+    li:nth-child(1) {
+      animation: reveal-ul 1s 1.5s ease-in-out forwards;
+    }
+    li:nth-child(2) {
+      animation: reveal-ul 1s 1.6s ease-in-out forwards;
+    }
+    li:nth-child(3) {
+      animation: reveal-ul 1s 1.7s ease-in-out forwards;
+    }
+    li:nth-child(4) {
+      animation: reveal-ul 1s 1.8s ease-in-out forwards;
+    }
+    li:nth-child(5) {
+      animation: reveal-ul 1s 1.9s ease-in-out forwards;
+    }
+    li:nth-child(6) {
+      animation: reveal-ul 1s 2s ease-in-out forwards;
+    }
+  }
+
+  main {
+    display: flex;
+    gap: 1rem;
+
+    svg {
+      opacity: 1;
+      color: rgb(129, 129, 129);
+      transition: 0.2s ease;
+    }
+
+    a {
+      opacity: 0;
+    }
+
+    a:nth-child(1) {
+      animation: show-social 2s 2.5s ease forwards;
+    }
+    a:nth-child(2) {
+      animation: show-social 2s 2.6s ease forwards;
+    }
+
+    svg:hover {
+      opacity: 1;
+      color: #16b4f8;
+    }
+  }
+}
