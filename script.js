@@ -1,4 +1,13 @@
-function aboutPage(){
-    let button_about = document.getElementById("btn_about")
-    button_about.addEventListener(Event)
-}
+// const observer = new IntersectionObserver((entries) => {
+//     entries.forEach(entry => {
+//         if (entry.intersectionRatio > 0.5){
+//             entry.target.classList.remove('hidden');
+//         }else{
+//             entry.target.classList.add('hidden')
+//         }
+//     });
+// }, {
+//     threshold: [0.5]
+// })
+
+// observer.observe(document.querySelector('section.about'))
