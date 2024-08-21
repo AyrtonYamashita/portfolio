@@ -69,3 +69,39 @@
     transform: translateX(0);
   }
 }
+
+@keyframes show-tech {
+  from {
+    opacity: 0;
+    filter: blur(100%);
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes hidden-home {
+  from {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    filter: blur(100);
+    transform: translateX(-100px);
+  }
+}
+
+
+@keyframes spin {
+  from{
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}

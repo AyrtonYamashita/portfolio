@@ -32,6 +32,11 @@ a {
   padding: 3rem;
 }
 
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
 
 section.home {
   display: flex;
@@ -176,15 +181,14 @@ section.about {
   min-height: 90vh;
 
   nav {
-    width: 100%;
-    position: fixed;
+    width: 50%;
+    margin-inline: auto;
     display: flex;
     padding: 2rem;
-    z-index: 2;
     ul {
       list-style: none;
       display: flex;
-      margin-left: auto;
+      margin-inline: auto;
       gap: 2rem;
 
       a {
@@ -222,120 +226,223 @@ section.about {
       li:nth-child(1) {
         animation: show-nav 1s 0.1s ease-in-out forwards;
         animation-timeline: view();
-        animation-range: cover 0% cover 80%;
+        animation-range: 200px 700px;
       }
       li:nth-child(2) {
         animation: show-nav 1s 0.2s ease-in-out forwards;
         animation-timeline: view();
-        animation-range: cover 0% cover 80%;
+        animation-range: 200px 700px;
       }
       li:nth-child(3) {
         animation: show-nav 1s 0.4s ease-in-out forwards;
         animation-timeline: view();
-        animation-range: cover 0% cover 80%;
+        animation-range: 200px 700px;
       }
       li:nth-child(4) {
         animation: show-nav 1s 0.6s ease-in-out forwards;
         animation-timeline: view();
-        animation-range: cover 0% cover 80%;
+        animation-range: 200px 700px;
       }
       li:nth-child(5) {
         animation: show-nav 1s 0.8s ease-in-out forwards;
         animation-timeline: view();
-        animation-range: cover 0% cover 80%;
+        animation-range: 200px 700px;
       }
       li:nth-child(6) {
         animation: show-nav 1s 1s ease-in-out forwards;
         animation-timeline: view();
-        animation-range: cover 0% cover 80%;
+        animation-range: 200px 700px;
       }
     }
   }
 
   .container-about {
-    display: flex;
-    gap: 5rem;
-  }
-
-  aside {
-    width: 40%;
+    width: 100%;
     min-height: 90vh;
-
-    h1 {
-      opacity: 0;
-      font-size: 2.5rem;
-      margin-block: 2.5rem;
-      animation: show-social 1s ease forwards;
-      animation-timeline: view();
-      animation-range: cover 2% cover 80%;
-    }
-
-    p {
-      opacity: 0;
-      font-size: 1.5rem;
-      text-align: justify;
-      margin-bottom: 1rem;
-      span:nth-child(1) {
-        color: #007acc;
-      }
-      span:nth-child(2) {
-        color: #61dafb;
-      }
-      span:nth-child(3) {
-        color: #3f873f;
-      }
-    }
-
-    p:nth-child(2) {
-      animation: show-p 1s ease forwards;
-      animation-timeline: view();
-      animation-range: cover 0% cover 35%;
-    }
-    p:nth-child(3) {
-      animation: show-p 1s 0.2s ease forwards;
-      animation-timeline: view();
-      animation-range: cover 0% cover 35%;
-    }
-    p:nth-child(4) {
-      animation: show-p 1s 0.3s ease forwards;
-      animation-timeline: view();
-      animation-range: cover 0% cover 35%;
-    }
-    p:nth-child(5) {
-      animation: show-p 1s 0.4s ease forwards;
-      animation-timeline: view();
-      animation-range: cover 0% cover 35%;
-    }
-    p:nth-child(6) {
-      animation: show-p 1s 0.5s ease forwards;
-      animation-timeline: view();
-      animation-range: cover 0% cover 35%;
-    }
-    p:nth-child(7) {
-      animation: show-p 1s 0.6s ease forwards;
-      animation-timeline: view();
-      animation-range: cover 0% cover 20%;
-    }
-  }
-
-  main {
-    width: 60%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-      opacity: 0;
-      width: 25rem;
-      border-radius: 2rem;
-      animation: show-social 1s ease forwards;
-      animation-timeline: view();
-      animation-range: cover 0% cover 80%;
-      border: 3px solid gray;
+    flex-direction: column;
+    gap: 5rem;
+
+    aside {
+      margin-inline: auto;
+      width: 50%;
+      h1 {
+        opacity: 0;
+        font-size: 2.5rem;
+        margin-block: 3.5rem;
+        animation: show-social 1s ease forwards;
+        animation-timeline: view();
+        animation-range: 400px 700px;
+      }
+
+      p {
+        opacity: 0;
+        font-size: 1rem;
+        text-align: justify;
+        margin-bottom: 1rem;
+        span:nth-child(1) {
+          color: #007acc;
+        }
+        span:nth-child(2) {
+          color: #61dafb;
+        }
+        span:nth-child(3) {
+          color: #3f873f;
+        }
+      }
+
+      p:nth-child(2) {
+        animation: show-p 1s ease forwards;
+        animation-timeline: view();
+        animation-range: 300px 700px;
+      }
+      p:nth-child(3) {
+        animation: show-p 1s 0.2s ease forwards;
+        animation-timeline: view();
+        animation-range: 300px 700px;
+      }
+    }
+
+    main {
+      max-width: 50rem;
+      height: 50vh;
+      display: flex;
+      margin-inline: auto;
+      margin-top: 10rem;
+      gap: 2rem;
+
+      .tech-inner {
+        height: 8rem;
+      }
+
+      .tech-inner:nth-child(1) {
+        animation: show-tech linear forwards;
+        animation-timeline: view();
+        animation-range: 0 450px;
+        .tech {
+          background: #16333b;
+          border-radius: 0.5rem;
+          margin: 0 auto;
+          width: 15rem;
+          height: 8rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+
+          &::after,
+          &::before {
+            content: "";
+            position: absolute;
+            height: 8.2rem;
+            width: 15.2rem;
+            background-image: conic-gradient(
+              from var(--angle),
+              transparent 30%,
+              #61dafb
+            );
+            z-index: -1;
+            padding: 4rem;
+            border-radius: 0.5rem;
+            animation: 5s spin linear infinite;
+          }
+
+          &::before {
+            filter: blur(1.5rem);
+            opacity: 0.2;
+          }
+
+          svg {
+            width: 5rem;
+          }
+        }
+      }
+
+      .tech-inner:nth-child(2) {
+        animation: show-tech linear forwards;
+        animation-timeline: view();
+        animation-range: 0px 500px;
+        .tech {
+          background: #1f1f1f;
+          border-radius: 0.5rem;
+          margin: 0 auto;
+          width: 15rem;
+          height: 8rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+
+          &::after,
+          &::before {
+            content: "";
+            position: absolute;
+            height: 8.2rem;
+            width: 15.2rem;
+            background-image: conic-gradient(
+              from var(--angle),
+              transparent 30%,
+              #66fb61
+            );
+            z-index: -1;
+            padding: 4rem;
+            border-radius: 0.5rem;
+            animation: 5s spin linear infinite;
+          }
+
+          &::before {
+            filter: blur(1.5rem);
+            opacity: 0.2;
+          }
+
+          svg {
+            width: 5rem;
+          }
+        }
+      }
+
+      .tech-inner:nth-child(3) {
+        animation: show-tech linear forwards;
+        animation-timeline: view();
+        animation-range: 0px 600px;
+        .tech {
+          background: #092331;
+          border-radius: 0.5rem;
+          margin: 0 auto;
+          width: 15rem;
+          height: 8rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+
+          &::after,
+          &::before {
+            content: "";
+            position: absolute;
+            height: 8.2rem;
+            width: 15.2rem;
+            background-image: conic-gradient(
+              from var(--angle),
+              transparent 30%,
+              #61a9fb
+            );
+            z-index: -1;
+            padding: 4rem;
+            border-radius: 0.5rem;
+            animation: 5s spin linear infinite;
+          }
+
+          &::before {
+            filter: blur(1.5rem);
+            opacity: 0.2;
+          }
+
+          svg {
+            width: 5rem;
+          }
+        }
+      }
     }
   }
-}
-
-section.projects{
-  width: 100%;
-  min-height: 90vh;
 }
