@@ -1,0 +1,101 @@
+nav {
+  width: 50%;
+  margin-inline: auto;
+  display: flex;
+  padding: 2rem;
+  ul {
+    list-style: none;
+    display: flex;
+    margin-inline: auto;
+    gap: 2rem;
+
+    a {
+      display: inline-block;
+      position: relative;
+      transition: 0.2s 0.2s ease;
+    }
+
+    a:hover {
+      color: #16b4f8;
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0) translateY(5px);
+      height: 2px;
+      bottom: 0;
+      right: 0;
+      background-color: #16b4f8;
+      transform-origin: bottom right;
+      transition: transform 0.4s ease-out;
+    }
+
+    a:hover::after {
+      transform: scaleX(1) translateY(5px);
+      transform-origin: bottom left;
+    }
+
+    li {
+      opacity: 0;
+    }
+
+    li:nth-child(1) {
+      animation: show-nav 1s 0.1s ease-in-out forwards;
+      animation-timeline: view();
+      animation-range: 200px 700px;
+    }
+    li:nth-child(2) {
+      animation: show-nav 1s 0.2s ease-in-out forwards;
+      animation-timeline: view();
+      animation-range: 200px 700px;
+    }
+    li:nth-child(3) {
+      animation: show-nav 1s 0.4s ease-in-out forwards;
+      animation-timeline: view();
+      animation-range: 200px 700px;
+    }
+    li:nth-child(4) {
+      animation: show-nav 1s 0.6s ease-in-out forwards;
+      animation-timeline: view();
+      animation-range: 200px 700px;
+    }
+    li:nth-child(5) {
+      animation: show-nav 1s 0.8s ease-in-out forwards;
+      animation-timeline: view();
+      animation-range: 200px 700px;
+    }
+    li:nth-child(6) {
+      animation: show-nav 1s 1s ease-in-out forwards;
+      animation-timeline: view();
+      animation-range: 200px 700px;
+    }
+  }
+}
+
+fieldset {
+  width: 50rem;
+  margin-inline: auto;
+  padding: 1rem;
+  border: none;
+  animation: show-tech linear forwards;
+  animation-timeline: view();
+  animation-range: 0 200px;
+
+  margin-top: 2rem;
+  legend {
+    font-size: 2rem;
+  }
+  p {
+    font: 400 1rem/150% "Ubuntu", sans-serif;
+    text-align: justify;
+    img {
+      vertical-align: middle;
+    }
+  }
+}
+
+fieldset:not(:last-of-type) {
+  border-bottom: 1px solid #3b3b3b69;
+}
