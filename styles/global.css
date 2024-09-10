@@ -155,10 +155,10 @@ section.home {
     }
 
     a:nth-child(1) {
-      animation: show-social 2s 2.5s ease forwards;
+      animation: show-social .5s 2.5s ease forwards;
     }
     a:nth-child(2) {
-      animation: show-social 2s 2.6s ease forwards;
+      animation: show-social .5s 2.6s ease forwards;
     }
 
     svg:hover {
