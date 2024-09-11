@@ -25,3 +25,9 @@ a {
   text-decoration: none;
 }
 
+@media(max-width: 40rem){
+  body{
+    overflow-x: hidden;
+  }
+}
+
