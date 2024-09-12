@@ -101,71 +101,102 @@ fieldset:not(:last-of-type) {
 }
 
 .mobile-only {
-  display: none;
+  visibility: hidden;
 }
 
 .select-section {
   display: flex;
   flex-direction: column;
   position: fixed;
-  padding: 1rem;
   width: 7rem;
-  height: 15rem;
+  height: 13rem;
   top: 32px;
   right: 32px;
-  gap: 0.75rem;
-  padding: 0.75rem;
   justify-content: end;
   text-align: end;
   z-index: 2;
-  background: #16b4f8;
+  border-radius: 0.75rem;
   clip-path: circle(9% at 84% 12%);
-  transition: 0.4s ease;
+  transition: 0.5s ease;
 
-  .menu-hamburguer {
-    width: 1.5rem;
-    height: 1rem;
-    position: relative;
-    cursor: pointer;
-    left: 80%;
-    bottom: 5%;
+  a {
+    transition: 0.2s ease;
+    padding: 0.25rem;
 
-    & span {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 0.125rem;
-      background-color: white;
-      transition: 0.2s ease;
-    }
-
-    span:nth-child(1) {
-      top: 0;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    }
-    span:nth-child(2) {
-      top: 50%;
-      transform: translateY(-50%);
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    }
-    span:nth-child(3) {
-      bottom: 0;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    &:hover {
+      background-color: #16b4f8;
     }
   }
 
-  &:hover {
-    clip-path: circle(150% at 84% 12%);
+  a:not(:last-of-type) {
+    border-bottom: 1px solid #47474736;
   }
+}
+
+.menu-hamburguer {
+  width: 1.2rem;
+  height: 0.875rem;
+  position: relative;
+  cursor: pointer;
+  left: 76%;
+  bottom: 7%;
+
+  span:nth-child(1) {
+    top: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  span:nth-child(3) {
+    bottom: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+.menu-hamburguer span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0.12rem;
+  background-color: white;
+  transition: 0.2s ease;
+  transform-origin: center;
+}
+
+.menu-hamburguer.close-path span:nth-child(1) {
+  transform: rotate(45deg) translateY(0);
+  top: 50%;
+}
+
+.menu-hamburguer.close-path span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-hamburguer.close-path span:nth-child(3) {
+  transform: rotate(-45deg) translateY(0);
+  top: 50%;
+}
+
+.active {
+  clip-path: circle(150% at 84% 12%);
+}
+
+.blur {
+  filter: blur(5px);
 }
 @media (width <= 40rem) {
   nav {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+    display: none;
   }
 
   fieldset {
     width: 100%;
+  }
+
+  .mobile-only {
+    visibility: visible;
   }
 }

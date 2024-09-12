@@ -161,8 +161,7 @@ section.home {
 }
 
 section.about {
-  opacity: 1;
-  transition: opacity 1s ease-in-out;
+  transition: 0.4s ease-in-out;
   width: 100%;
   min-height: 100vh;
   margin-top: 5rem;
@@ -310,7 +309,7 @@ section.about {
     .tech-inner:nth-child(4) {
       animation: show-tech linear forwards;
       animation-timeline: view();
-      animation-range: 0px 220px;
+      animation-range: 0px 120px;
       .tech {
         background: #161616;
         border-radius: 0.5rem;
@@ -355,6 +354,7 @@ section.about {
 section.projects {
   width: 100%;
   min-height: 100vh;
+  padding: 2rem;
 
   aside {
     width: 100%;
@@ -457,6 +457,7 @@ section.links {
   section {
     width: 100%;
     overflow-x: hidden;
+    transition: 0.4s ease-in-out;
   }
   section.home {
     font-size: 1rem;
@@ -491,10 +492,6 @@ section.links {
       }
     }
 
-    .mobile-only {
-      display: flex;
-    }
-
     ul {
       display: none;
     }
@@ -511,21 +508,98 @@ section.links {
 
     main {
       flex-direction: column;
-      .tech-inner:nth-child(4) {
-        animation-range: 0px 50px;
+      gap: 0;
+      margin-top: 0.125rem;
+    }
+
+    fieldset legend {
+      font-size: 1.5rem;
+    }
+
+    fieldset p {
+      font-size: 0.875rem;
+    }
+
+    main .tech-inner {
+      height: 6rem;
+    }
+
+    main .tech-inner:nth-child(1),
+    main .tech-inner:nth-child(2),
+    main .tech-inner:nth-child(3),
+    main .tech-inner:nth-child(4) {
+      animation: none;
+    }
+
+    main .tech-inner:nth-child(1) .tech {
+      height: 5rem;
+      border: 1px solid #61a9fb;
+      &::before,
+      &::after {
+        display: none;
+      }
+      svg {
+        width: 3rem;
+      }
+    }
+    main .tech-inner:nth-child(2) .tech {
+      height: 5rem;
+      border: 1px solid #66fb61;
+      &::before,
+      &::after {
+        display: none;
+      }
+      svg {
+        width: 3rem;
+      }
+    }
+    main .tech-inner:nth-child(3) .tech {
+      height: 5rem;
+      border: 1px solid #61a9fb;
+      &::before,
+      &::after {
+        display: none;
+      }
+      svg {
+        width: 3rem;
+      }
+    }
+    main .tech-inner:nth-child(4) .tech {
+      height: 5rem;
+      border: 1px solid #ffd845;
+      &::before,
+      &::after {
+        display: none;
+      }
+      svg {
+        width: 3rem;
       }
     }
   }
   section.projects {
     width: 100%;
-    border: 1px solid green;
-    .container-projects {
-      border: 1px solid red;
-    }
+    padding: 0;
 
     .container-projects .project-wrapper {
-      border: 1px solid;
       grid-template-columns: 1fr;
+      gap: 0.75rem;
+
+      .project-inner {
+        animation: none;
+        width: 100%;
+      }
+    }
+  }
+
+  section.experience {
+    fieldset legend {
+      font-size: 1.5rem;
+    }
+  }
+
+  section.links {
+    .social-media {
+      width: 100%;
     }
   }
 }

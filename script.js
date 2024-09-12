@@ -1,13 +1,14 @@
-// const observer = new IntersectionObserver((entries) => {
-//     entries.forEach(entry => {
-//         if (entry.intersectionRatio > 0.5){
-//             entry.target.classList.remove('hidden');
-//         }else{
-//             entry.target.classList.add('hidden')
-//         }
-//     });
-// }, {
-//     threshold: [0.5]
-// })
+const menu = document.querySelector(".menu-hamburguer");
+const select_list = document.querySelector(".select-section");
+const sections = document.querySelectorAll("section")
 
-// observer.observe(document.querySelector('section.about'))
+menu.onclick = () => {
+  select_list.classList.toggle("active")
+  menu.classList.toggle("close-path")
+
+  sections.forEach((section) => {
+    section.classList.toggle("blur")
+  })
+  console.log(menu)
+
+}
