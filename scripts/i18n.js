@@ -9,6 +9,7 @@ export const translations = {
     navAbout: "Sobre mim",
     navProjects: "Projetos",
     navContact: "Contato",
+    navHome: "Início",
     navExperience: "Experiências",
     sectionAboutTitle: "Sobre mim",
     sectionProjectTitle: "Projetos",
@@ -45,6 +46,7 @@ export const translations = {
       "Support Computing..."
     ],
     navAbout: "About me",
+    navHome: "Home",
     navProjects: "My Projects",
     navContact: "Contact",
     navExperience: "Experiences",

@@ -31,11 +31,11 @@
 }
 
 .experience-item {
-  transition: all .3s ease;
+  transition: all .1s ease;
 }
 
 .experience-item:hover {
-  transform: translateX(6px);
+  transform: translateX(2px);
 }
 
 .fade-up {

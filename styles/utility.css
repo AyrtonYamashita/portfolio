@@ -96,6 +96,10 @@
   animation-delay: 4s;
 }
 
+.font-display {
+  font-family: "Roboto", sans-serif;
+}
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
@@ -105,33 +109,41 @@
   scrollbar-width: none;
 }
 
-.shadow-scroll::before,
-.shadow-scroll::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 2rem;
-  height: 100%;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.shadow-scroll::before {
-  left: 0;
-  background: linear-gradient(to right, rgba(17, 17, 17, 0.6), transparent);
-}
-
-.shadow-scroll::after {
-  right: 0;
-  background: linear-gradient(to left, rgba(17, 17, 17, 0.6), transparent);
-}
-
-.font-display {
-  font-family: "Roboto", sans-serif;
-}
-
 @media (max-width: 768px) {
-  .hide-scrollbar {
-    -webkit-overflow-scrolling: touch;
+  .nav-mask {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
   }
+}
+
+@media (min-width: 769px) {
+  .nav-mask {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#theme-transition {
+  /* Força aceleração de hardware */
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translate3d(0, 100%, 0); 
+  will-change: transform;
+}
+
+#transition-icon {
+  /* Evita que o navegador recalcule o layout do ícone durante o giro */
+  will-change: transform, opacity;
+  display: inline-block;
+}
+
+/* Trava para o conteúdo de fundo não tentar renderizar enquanto a cortina sobe */
+.is-animating-theme main, 
+.is-animating-theme section {
+  pointer-events: none;
+  user-select: none;
 }
