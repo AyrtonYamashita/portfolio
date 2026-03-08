@@ -24,7 +24,8 @@
 
 </head>
 
-<body class="bg-slate-50 text-slate-700 dark:bg-[#111111] dark:text-white font-display transition-colors durantion-1000 ease-in-out">
+<body
+  class="bg-slate-50 text-slate-700 dark:bg-[#111111] dark:text-white font-display transition-colors durantion-1000 ease-in-out">
 
   <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
     <div class="blob bg-blue-500 top-[100px] left-[-200px]"></div>
@@ -36,13 +37,23 @@
   <div class="relative z-10">
     <header class="sticky top-4 z-10">
       <div class="flex items-center w-full px-4">
+        <button id="switch-lang"
+          class="relative w-12 h-12 flex items-center justify-center cursor-pointer overflow-hidden rounded-lg bg-white/10 dark:bg-white/5 backdrop-blur-lg border border-white/20 transition-colors duration-300">
+
+          <span
+            class="absolute transition-all duration-500 transform rotate-0 scale-100 opacity-100 dark:-rotate-90 dark:scale-0 dark:opacity-0 text-slate-700">EN</span>
+
+          <span
+            class="absolute transition-all duration-500 transform rotate-90 scale-0 opacity-0 dark:rotate-0 dark:scale-100 dark:opacity-100 text-white-400">PT</span>
+
+        </button>
         <nav
           class="flex-1 m-4 rounded-xl border border-white/20 backdrop-blur-lg dark:bg-white/5 w-full h-12 overflow-x-auto overflow-y-hidden scrollbar-hide shadow-sm bg-white/10">
           <ul class="flex gap-8 items-center p-4 justify-evenly text-sm  whitespace-nowrap">
-            <li><a href="#about">Sobre mim</a></li>
-            <li><a href="#projects">Projetos</a></li>
-            <li><a href="#experiences">Experiências</a></li>
-            <li><a href="#contact" class="mr-4 md:mr-none">Contato</a></li>
+            <li><a href="#about" data-i18n="navAbout">Sobre mim</a></li>
+            <li><a href="#projects" data-i18n="navProjects">Projetos</a></li>
+            <li><a href="#experiences" data-i18n="navExperiences">Experiências</a></li>
+            <li><a href="#contact" class="mr-4 md:mr-none" data-i18n="navContact">Contato</a></li>
           </ul>
         </nav>
         <button id="switch-mode"
@@ -88,17 +99,17 @@
       <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div class="space-y-6">
 
-          <h2 class="text-3xl md:text-4xl font-semibold text-shadow-xs">
+          <h2 class="text-3xl md:text-4xl font-semibold text-shadow-xs" data-i18n="sectionAboutTitle">
             Sobre mim
           </h2>
 
-          <p class="leading-relaxed text-shadow">
+          <p class="leading-relaxed text-shadow" data-i18n="textAbout1">
             Sou desenvolvedor focado em backend, automação e soluções fullstack.
             Tenho experiência criando sistemas escaláveis, APIs e automações que
             otimizam processos e aumentam produtividade.
           </p>
 
-          <p class="leading-relaxed">
+          <p class="leading-relaxed" data-i18n="textAbout2">
             Atualmente trabalho com tecnologias modernas para construir aplicações
             robustas, focando em performance, arquitetura limpa e boas práticas
             de engenharia de software.
@@ -125,7 +136,7 @@
 
       <div class="max-w-6xl mx-auto space-y-6">
 
-        <h2 class="text-3xl md:text-4xl font-semibold mb-12">
+        <h2 class="text-3xl md:text-4xl font-semibold mb-12" data-i18n="sectionProjectsTitle">
           Projetos
         </h2>
 
@@ -138,11 +149,11 @@
             </div>
           </div>
 
-          <h3 class="text-lg font-semibold mb-2">
+          <h3 class="text-lg font-semibold mb-2" data-i18n="project1Title">
             Doctools.io (Solução de OCR e Automação de Workflow)
           </h3>
 
-          <p class="text-sm mb-4">
+          <p class="text-sm mb-4" data-i18n="project1Desc">
             Plataforma para manipulação de dados com extração inteligente de PDFs e leitura automatizada de códigos de
             barras. O sistema gera scripts de automação de tarefas e integra fluxos de trabalho via API com foco em
             integridade e segurança.
@@ -170,11 +181,11 @@
             </div>
           </div>
 
-          <h3 class="text-lg font-semibold mb-2">
+          <h3 class="text-lg font-semibold mb-2" data-i18n="project2Title">
             Notion API (Serviço de Automação e Gerenciamento de Dados (Background Server & Webhooks))
           </h3>
 
-          <p class="text-sm mb-4">
+          <p class="text-sm mb-4" data-i18n="project2Desc">
             Serviço de background que integra múltiplas bases de dados para processamento de informações e geração
             automatizada de etiquetas. O sistema opera via varredura ou gatilhos em tempo real, contando com camadas de
             autenticação e validação de payloads para garantir a integridade e a segurança total no tráfego dos dados
@@ -201,11 +212,11 @@
             </div>
           </div>
 
-          <h3 class="text-lg font-semibold mb-2">
+          <h3 class="text-lg font-semibold mb-2" data-i18n="project3Title">
             Panone (Ecossistema ERP & Gestão de Vendas)
           </h3>
 
-          <p class="text-sm mb-4 leading-relaxed">
+          <p class="text-sm mb-4 leading-relaxed" data-i18n="project3Desc">
             Sistema full-stack para gestão integrada de produtos e estoque, com controle logístico e fluxos de checkout
             com descontos dinâmicos. Inclui calendários operacionais e painéis administrativos/do usuário distintos,
             garantindo uma experiência personalizada e controle total do inventário.
@@ -231,7 +242,7 @@
 
       <div class="max-w-5xl mx-auto">
 
-        <h2 class="text-3xl md:text-4xl font-semibold mb-16">
+        <h2 class="text-3xl md:text-4xl font-semibold mb-16" data-i18n="sectionExperiencesTitle">
           Experiência
         </h2>
 
@@ -240,15 +251,15 @@
 
             <div class="absolute -left-2 top-2 w-4 h-4 dark:bg-white/60 bg-slate-400 rounded-full"></div>
 
-            <h3 class="text-lg font-semibold">
+            <h3 class="text-lg font-semibold" data-i18n="experience1title">
               Desenvolvedor de Software Independente
             </h3>
 
-            <span class="text-sm">
+            <span class="text-sm" data-i18n="experience1Time">
               2023 - Presente
             </span>
 
-            <p class="text-sm mt-2">
+            <p class="text-sm mt-2" data-i18n="experience1Desc">
               Atuo no desenvolvimento de sistemas personalizados e escaláveis, entregando soluções completas desde a
               arquitetura até a implementação. Foco em criar ferramentas que automatizam processos e resolvem problemas
               de negócio de forma independente e eficiente.
@@ -260,15 +271,15 @@
 
             <div class="absolute -left-2 top-2 w-4 h-4 dark:bg-white bg-slate-500 rounded-full "></div>
 
-            <h3 class="text-lg font-semibold ">
+            <h3 class="text-lg font-semibold" data-i18n="experience2title">
               Analista de TI (PJ)
             </h3>
 
-            <span class="text-sm">
+            <span class="text-sm" data-i18n="experience2Time">
               2021 — Presente
             </span>
 
-            <p class="text-sm mt-2">
+            <p class="text-sm mt-2" data-i18n="experience2Desc">
               Responsável pelo gerenciamento de redes Unifi e suporte remoto a unidades distribuídas. Especialista em
               manutenção de hardware e consultoria técnica para outsourcing de equipamentos, integrando o
               desenvolvimento de software sob medida para otimizar processos internos e a logística de produção.
@@ -280,15 +291,15 @@
 
             <div class="absolute -left-2 top-2 w-4 h-4 dark:bg-white/60 bg-slate-400 rounded-full"></div>
 
-            <h3 class="text-lg font-semibold">
+            <h3 class="text-lg font-semibold" data-i18n="experience3title">
               Educador de TI & Voluntariado
             </h3>
 
-            <span class="text-sm">
+            <span class="text-sm" data-i18n="experience3Time">
               2018 — 2019
             </span>
 
-            <p class="text-sm mt-2">
+            <p class="text-sm mt-2" data-i18n="experience3Desc">
               Responsável pelo desenvolvimento e aplicação de metodologias de ensino para informática fundamental.
               Focado em democratizar o acesso à tecnologia para públicos em situação de vulnerabilidade, transformando o
               conhecimento técnico em ferramenta de inclusão.
@@ -300,15 +311,15 @@
 
             <div class="absolute -left-2 top-2 w-4 h-4 dark:bg-white/60 bg-slate-400 rounded-full"></div>
 
-            <h3 class="text-lg font-semibold">
+            <h3 class="text-lg font-semibold" data-i18n="experience4title">
               Consultoria Técnica & Hardware Independente
             </h3>
 
-            <span class="text-sm">
+            <span class="text-sm" data-i18n="experience4Time">
               2014 - Presente
             </span>
 
-            <p class="text-sm mt-2">
+            <p class="text-sm mt-2" data-i18n="experience4Desc">
               Montagem, manutenção especializada e consultoria em hardware. Foco em workstations e máquinas de alto
               desempenho, aliando precisão técnica na montagem à análise crítica de compatibilidade e performance.
             </p>
@@ -325,11 +336,11 @@
 
       <div class="max-w-4xl mx-auto text-center">
 
-        <h2 class="text-3xl md:text-4xl font-semibold mb-6">
-          Vamos conversar
+        <h2 class="text-3xl md:text-4xl font-semibold mb-6" data-i18n="sectionContactTitle">
+          Contatos
         </h2>
 
-        <p class="mb-12 max-w-xl mx-auto">
+        <p class="mb-12 max-w-xl mx-auto" data-i18n="contactDesc">
           Estou sempre aberto a discutir novos projetos, oportunidades de trabalho
           ou colaborações. Se você tem uma ideia ou precisa de ajuda com tecnologia,
           entre em contato.
@@ -367,7 +378,7 @@
     </footer>
   </div>
 
-  <script src="./script.js"></script>
+  <script type="module" src="./scripts/main.js"></script>
 </body>
 
 </html>
