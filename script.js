@@ -7,7 +7,7 @@ const roles = [
 
 const typingElement = document.getElementById("typing");
 const errorButtons = document.querySelectorAll(".error");
-
+const toggle = document.getElementById("switch-mode");
 
 let roleIndex = 0;
 let charIndex = 0;
@@ -43,6 +43,18 @@ function errorAlert(msg) {
   alert(msg)
 }
 
+function rand() {
+  return (Math.random() * 200 - 100).toFixed(0) + "px";
+}
+
+document.querySelectorAll(".blob").forEach(blb => {
+
+  blb.style.setProperty("--x1", rand());
+  blb.style.setProperty("--y1", rand());
+  blb.style.setProperty("--x2", rand());
+  blb.style.setProperty("--y2", rand());
+
+});
 
 errorButtons.forEach(button => {
   button.addEventListener("click", () => {
@@ -60,6 +72,22 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll(".fade-up").forEach(el => {
   observer.observe(el)
+})
+
+if (localStorage.theme === "dark" || (!('theme' in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+            document.documentElement.classList.add("dark")
+        } else {
+            document.documentElement.classList.remove("dark")
+        }
+
+toggle.addEventListener("click", () => {
+  document.documentElement.classList.toggle("dark");
+
+  if (document.documentElement.classList.contains("dark")) {
+    localStorage.theme = "dark";
+  } else {
+    localStorage.theme = "light";
+  }
 })
 
 typeEffect();
