@@ -9,7 +9,7 @@
   text-align: center;
   font-size: 0.9rem;
 
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .skill-card:hover {
@@ -26,7 +26,7 @@
 
   backdrop-filter: blur(10px);
 
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .project-card:hover {
@@ -41,7 +41,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   color: white;
-  transition: .3s;
+  transition: border-color .3s, background .3s;
 }
 
 .contact-input:focus {
@@ -54,7 +54,7 @@
   padding: 10px 18px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 8px;
-  transition: .3s;
+  transition: background .3s;
 }
 
 .contact-btn:hover {
@@ -110,6 +110,14 @@
 }
 
 @media (max-width: 768px) {
+  .blob {
+    width: 300px;
+    height: 400px;
+    filter: blur(80px);
+    animation: none;
+    opacity: 0.25;
+  }
+
   .nav-mask {
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
     mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);

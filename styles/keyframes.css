@@ -31,7 +31,7 @@
 }
 
 .experience-item {
-  transition: all .1s ease;
+  transition: transform .1s ease;
 }
 
 .experience-item:hover {
@@ -41,7 +41,7 @@
 .fade-up {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 1s ease;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .fade-up.show {
